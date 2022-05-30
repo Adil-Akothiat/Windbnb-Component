@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windbnb</title>
+    <link rel="shortcut icon" href="./images/devchallenges.png" type="image/x-icon">
+    <link rel="stylesheet" href="./sass/style.css">
+    <script src="./scripts/variables.js" defer></script>
+    <script src="./scripts/createStays.js"defer></script>
+    <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/header.js" defer></script>
+    <script src="./scripts/load.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./images/logo.svg" alt="Windbnb">
+        </div>
+        <div class="block_comp">
+            <div class="edit">
+                <p>
+                    Edit your search
+                </p>
+                <div id="rm_edit" style="width: 20px;">
+                    <img style="width: 100%;" src="./images/icons8-close.svg" alt="close button">
+                </div>
+            </div>
+            <div class="search_bar fl_c">
+                <div class="blc">
+                    <div class="search_field">
+                        <h6>location</h6>
+                        <input type="text" name="location" id="l_field" placeholder="Add location">
+                    </div>
+                    <div class="guests">
+                        <h6>guests</h6>
+                        <h5 id="guests_visited">Add guests</h5>
+                    </div>
+                </div>
+                <div class="alert">
+                    <div class="location">
+                        <div>
+                            <img src="./images/location-sign-svgrepo-com.svg" alt="icon location">
+                            <samp id="samp_loc"></samp>
+                        </div>
+                    </div>
+                    <div class="edit_guests">
+                        <div>
+                            <h3>
+                                adults
+                            </h3>
+                            <h4>
+                                Ages 13 or above
+                            </h4>
+                            <div class="incr_decr">
+                                <button class="minus">−</button>
+                                <samp class="ad">0</samp>
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>
+                                children
+                            </h3>
+                            <h4>
+                                Ages 2-12
+                            </h4>
+                            <div class="incr_decr">
+                                <button class="minus">−</button>
+                                <samp class="ch">0</samp>
+                                <button class="plus">+</button>
+                            </div>
+                            <button class="visit_g">
+                                visit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="srch">
+                    <button class="btn">
+                        <img src="./images/search.svg" alt="lc icon">
+                        <span class="t_srch">search</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="loader">
+        <div class="sniper">
+            
+        </div>
+    </div>
+    <main>
+        <div class="stays_number">
+            <h2>
+                Stays in Finland
+            </h2>
+            <span id='count_stays'>
+            </span>
+        </div>
+        <div class="stays">
+
+        </div>
+    </main>
+</body>
+</html>
