@@ -6,6 +6,7 @@ searchField.onkeydown = ()=> {
     main.style.display='none';
     loader.style.display='block';
     snip.style.display='block';
+    loader.style.marginTop='4rem';
     try {
         extractData('../scripts/json/stays.json')
         .then(stays=> {
@@ -21,7 +22,7 @@ searchField.onkeydown = ()=> {
                         header.style.display='block';
                         loader.style.display='none';
                         snip.style.display='none';
-                    }, 1000)
+                    }, 600)
                 }
             })
         })
@@ -59,7 +60,7 @@ visitGuest.onclick = function () {
                         header.style.display='block';
                         loader.style.display='none';
                         snip.style.display='none';
-                    }, 1000)
+                    }, 600)
                 }
             })
         })
