@@ -19,15 +19,6 @@ function editGuests() {
         this.nextElementSibling.textContent=childrens;
     }
 }
-visitGuest.onclick = function() {
-    if(childrens+adults==0){
-        guestsVisited.textContent = `add guests`;
-    }
-    else {
-        guestsVisited.textContent = `${childrens+adults} guests`;
-    }
-}
-//change edit
 closeEdit.onclick = function() {
     blockComp.classList.remove('focus');
     this.parentElement.style.display='none';
