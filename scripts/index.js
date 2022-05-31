@@ -3,7 +3,9 @@ async function extractData(API) {
 }
 createSatysComponent();
 searchField.onkeydown = ()=> {
-    
+    main.style.display='none';
+    loader.style.display='block';
+    snip.style.display='block';
     try {
         extractData('../scripts/json/stays.json')
         .then(stays=> {
@@ -13,6 +15,13 @@ searchField.onkeydown = ()=> {
                     allStays[i].classList.remove('hide_stay');
                     locat.classList.add('open');
                     locationAlert.innerHTML = `${stay.city}, Finland`;
+
+                    setTimeout(()=> {
+                        main.style.display='block';
+                        header.style.display='block';
+                        loader.style.display='none';
+                        snip.style.display='none';
+                    }, 1000)
                 }
             })
         })
@@ -21,6 +30,12 @@ searchField.onkeydown = ()=> {
     }
 }
 visitGuest.onclick = function () {
+    blockComp.classList.remove('focus');
+    closeEdit.parentElement.style.display='none';
+    searchComponent.classList.add('fl_c');
+    loc.classList.remove('open');
+    guestEdit.classList.remove('open');
+    logo.classList.remove('close');
     if(childrens+adults==0){
         guestsVisited.textContent = `add guests`;
     }
@@ -33,8 +48,18 @@ visitGuest.onclick = function () {
             stays.forEach((stay,i)=> {
                 allStays[i].classList.add('hide_stay');
                 if(stay.maxGuests<=childrens+adults) {
+                    main.style.display='none';
+                    header.style.display='none';
+                    loader.style.display='block';
+                    snip.style.display='block';
                     allStays[i].classList.remove('hide_stay');
                     locationAlert.innerHTML = `${stay.city}, Finland`;
+                    setTimeout(()=> {
+                        main.style.display='block';
+                        header.style.display='block';
+                        loader.style.display='none';
+                        snip.style.display='none';
+                    }, 1000)
                 }
             })
         })
